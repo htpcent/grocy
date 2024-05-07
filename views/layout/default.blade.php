@@ -154,6 +154,20 @@
 			class="collapse navbar-collapse">
 			<ul class="navbar-nav navbar-sidenav">
 
+				<!-- custom productinfo start -->
+				@if(GROCY_FEATURE_FLAG_STOCK)
+				<li class="nav-item nav-item-sidebar @if($viewName == 'cproductinfo') active-page @endif"
+					data-toggle="tooltip"
+					data-placement="right"
+					title="{{ $__t('Produktinformation') }}">
+					<a class="nav-link discrete-link"
+						href="{{ $U('/cproductinfo') }}">
+						<i class="fa-solid fa-fw fa-box"></i>
+						<span class="nav-link-text">{{ $__t('Produktinformation') }}</span>
+					</a>
+				</li>
+				@endif
+				<!-- custom productinf end -->
 				@if(GROCY_FEATURE_FLAG_STOCK)
 				<li class="nav-item nav-item-sidebar @if($viewName == 'stockoverview') active-page @endif"
 					data-toggle="tooltip"

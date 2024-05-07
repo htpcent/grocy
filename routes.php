@@ -123,6 +123,10 @@ $app->group('', function (RouteCollectorProxy $group)
 	$group->get('/api', '\Grocy\Controllers\OpenApiController:DocumentationUi');
 	$group->get('/manageapikeys', '\Grocy\Controllers\OpenApiController:ApiKeysList');
 	$group->get('/manageapikeys/new', '\Grocy\Controllers\OpenApiController:CreateNewApiKey');
+
+	// custom productinfo start
+	$group->get('/cproductinfo', '\Grocy\Controllers\StockController:Cproductinfo');
+	// custom productinfo end
 });
 
 $app->group('/api', function (RouteCollectorProxy $group)

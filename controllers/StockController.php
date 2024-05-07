@@ -612,4 +612,18 @@ class StockController extends BaseController
 			'quantityUnitConversionsResolved' => $quantityUnitConversionsResolved
 		]);
 	}
+
+	// custom productinfo start
+	public function Cproductinfo(Request $request, Response $response, array $args)
+	{
+		return $this->renderPage($response, 'cproductinfo', [
+			'products' => $this->getDatabase()->products()->where('active = 1')->where('id IN (SELECT product_id from stock_current WHERE amount_aggregated > 0)')->orderBy('name'),
+			'barcodes' => $this->getDatabase()->product_barcodes_comma_separated(),
+			'recipes' => $this->getDatabase()->recipes()->where('type', RecipesService::RECIPE_TYPE_NORMAL)->orderBy('name', 'COLLATE NOCASE'),
+			'locations' => $this->getDatabase()->locations()->orderBy('name', 'COLLATE NOCASE'),
+			'quantityUnits' => $this->getDatabase()->quantity_units()->orderBy('name', 'COLLATE NOCASE'),
+			'quantityUnitConversionsResolved' => $this->getDatabase()->cache__quantity_unit_conversions_resolved()
+		]);
+	}
+	// custom productinfo end
 }
