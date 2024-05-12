@@ -16,6 +16,8 @@ ADD protein INTEGER;
 ALTER TABLE products
 ADD salt INTEGER;
 
+INSERT INTO locations (id, name, description, active) VALUES ('-999', 'Neues Produkt', 'Neues Produkt via Plugin von Openfoodfacts importiert', '1');
+
 DROP VIEW recipes_pos_resolved;
 CREATE VIEW recipes_pos_resolved
 AS
