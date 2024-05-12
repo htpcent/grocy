@@ -508,6 +508,86 @@
 			'additionalCssClasses' => 'locale-number-input locale-number-quantity-amount'
 			))
 
+			<!-- custom start -->
+			@php if($mode == 'edit') { $value = $product->carbs; } else { $value = 0; } @endphp
+			@include('components.numberpicker', array(
+			'id' => 'carbs',
+			'label' => 'Kohlenhydrate',
+			'min' => '0.' . str_repeat('0', $userSettings['stock_decimal_places_amounts']),
+			'decimals' => $userSettings['stock_decimal_places_amounts'],
+			'value' => $value,
+			'hint' => $__t('Per stock quantity unit'),
+			'contextInfoId' => 'energy_qu_info',
+			'isRequired' => false,
+			'additionalCssClasses' => 'locale-number-input locale-number-quantity-amount'
+			))
+
+			@php if($mode == 'edit') { $value = $product->sugar; } else { $value = 0; } @endphp
+			@include('components.numberpicker', array(
+			'id' => 'sugar',
+			'label' => '- davon Zucker',
+			'min' => '0.' . str_repeat('0', $userSettings['stock_decimal_places_amounts']),
+			'decimals' => $userSettings['stock_decimal_places_amounts'],
+			'value' => $value,
+			'hint' => $__t('Per stock quantity unit'),
+			'contextInfoId' => 'energy_qu_info',
+			'isRequired' => false,
+			'additionalCssClasses' => 'locale-number-input locale-number-quantity-amount'
+			))
+
+			@php if($mode == 'edit') { $value = $product->fat; } else { $value = 0; } @endphp
+			@include('components.numberpicker', array(
+			'id' => 'fat',
+			'label' => 'Fett',
+			'min' => '0.' . str_repeat('0', $userSettings['stock_decimal_places_amounts']),
+			'decimals' => $userSettings['stock_decimal_places_amounts'],
+			'value' => $value,
+			'hint' => $__t('Per stock quantity unit'),
+			'contextInfoId' => 'energy_qu_info',
+			'isRequired' => false,
+			'additionalCssClasses' => 'locale-number-input locale-number-quantity-amount'
+			))
+
+			@php if($mode == 'edit') { $value = $product->fatacid; } else { $value = 0; } @endphp
+			@include('components.numberpicker', array(
+			'id' => 'fatacid',
+			'label' => '- davon gesättigte Fettsäuren',
+			'min' => '0.' . str_repeat('0', $userSettings['stock_decimal_places_amounts']),
+			'decimals' => $userSettings['stock_decimal_places_amounts'],
+			'value' => $value,
+			'hint' => $__t('Per stock quantity unit'),
+			'contextInfoId' => 'energy_qu_info',
+			'isRequired' => false,
+			'additionalCssClasses' => 'locale-number-input locale-number-quantity-amount'
+			))
+
+			@php if($mode == 'edit') { $value = $product->protein; } else { $value = 0; } @endphp
+			@include('components.numberpicker', array(
+			'id' => 'protein',
+			'label' => 'Eiweiß',
+			'min' => '0.' . str_repeat('0', $userSettings['stock_decimal_places_amounts']),
+			'decimals' => $userSettings['stock_decimal_places_amounts'],
+			'value' => $value,
+			'hint' => $__t('Per stock quantity unit'),
+			'contextInfoId' => 'energy_qu_info',
+			'isRequired' => false,
+			'additionalCssClasses' => 'locale-number-input locale-number-quantity-amount'
+			))
+
+			@php if($mode == 'edit') { $value = $product->salt; } else { $value = 0; } @endphp
+			@include('components.numberpicker', array(
+			'id' => 'salt',
+			'label' => 'Salz',
+			'min' => '0.' . str_repeat('0', $userSettings['stock_decimal_places_amounts']),
+			'decimals' => $userSettings['stock_decimal_places_amounts'],
+			'value' => $value,
+			'hint' => $__t('Per stock quantity unit'),
+			'contextInfoId' => 'energy_qu_info',
+			'isRequired' => false,
+			'additionalCssClasses' => 'locale-number-input locale-number-quantity-amount'
+			))
+			<!-- custom end -->
+
 			@php if($mode == 'edit') { $value = $product->quick_consume_amount; } else { $value = 1; } @endphp
 			@include('components.numberpicker', array(
 			'id' => 'quick_consume_amount',
